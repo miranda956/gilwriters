@@ -1,0 +1,21 @@
+<!-- payment.component.html -->
+<div class="paypal-form">
+  <div class="field">
+    <label for="firstName">First Name:</label>
+    <input pInputText id="firstName" type="text" [(ngModel)]="firstName">
+  </div>
+  <div class="field">
+    <label for="lastName">Last Name:</label>
+    <input pInputText id="lastName" type="text" [(ngModel)]="lastName">
+  </div>
+  <div class="field">
+    <label for="email">Email:</label>
+    <input pInputText id="email" type="email" [(ngModel)]="email">
+  </div>
+  <div class="field">
+    <label for="contact">Contact:</label>
+    <input pInputText id="contact" type="text" [(ngModel)]="contact">
+  </div>
+ 
+  <div id="paypal-buttons-container"></div>
+</div>

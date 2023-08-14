@@ -1,0 +1,50 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="card">
+      <h5>New Task</h5>
+      <div class="p-fluid p-formgrid grid">
+        <div class="success-card" *ngIf="successMessage">
+          {{ successMessage }}
+        </div>
+
+        <div class="field col-12">
+          <label for="taskCategory">Task Category:</label>
+          <input pInputText id="taskCategory" type="text" [(ngModel)]="registrationData.category" placeholder="e.g., Mathematics, Nursing, Computer Science">
+        </div>
+
+        <div class="field col-12">
+          <label for="taskDescription">Task Description (max 500 characters):</label>
+          <textarea pInputTextarea id="taskDescription" rows="10" [(ngModel)]="registrationData.description" maxlength="500"></textarea>
+        </div>
+
+        <div class="field col-12">
+          <label for="expectedDeliveryTime">Expected Delivery Time (in hours):</label>
+          <input pInputText id="expectedDeliveryTime" type="number" [(ngModel)]="registrationData.expected_delivery_time" placeholder="Enter time in hours">
+        </div>
+
+        <div class="field col-12">
+          <label for="budget">Budget:</label>
+          <input pInputText id="budget" type="number" [(ngModel)]="registrationData.budget">
+        </div>
+
+        <div class="field col-12">
+          <label for="status">Status:</label>
+          <select pDropdown id="status" [(ngModel)]="registrationData.status">
+            <option value="New">New</option>
+            <option value="Continuation">Continuation</option>
+          </select>
+        </div>
+
+        <div class="field col-12">
+          <label for="taskDocuments">Upload Task Documents:</label>
+          <input type="file" id="taskDocuments" (change)="onFileChange($event)">
+        </div>
+
+        <div class="col-12">
+          <button pButton label="Post Task" (click)="onSubmitJob()"></button>
+          <button pButton label="Go to Payments" *ngIf="taskPosted" (click)="goToPaymentsPage()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

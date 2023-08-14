@@ -1,0 +1,30 @@
+/* CSS for Task Description Textarea */
+.field.col-12 textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .field.col-12 textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .field.col-12 textarea::placeholder {
+    color: #aaa;
+  }
+ /* Add card styles to the success message */
+.success-card {
+  background-color: #d4edda; /* Light green background color */
+  border: 1px solid #c3e6cb; /* Light green border color */
+  border-radius: 0.25rem; /* Rounded corners */
+  padding: 1rem; /* Add some padding */
+  margin-top: 1rem; /* Space from other elements */
+}
+
+  

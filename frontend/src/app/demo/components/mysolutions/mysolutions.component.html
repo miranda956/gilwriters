@@ -1,0 +1,55 @@
+<div class="grid">
+    <div class="col-12">
+      <div class="card">
+        <h5>My Solution</h5>
+
+        <p-table [value]="solutionList" dataKey="taskId" [rows]="10" [loading]="loading" [rowHover]="true" styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['taskId','solutionDescription','documents']" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Task ID
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Solution Description
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Documents Attached
+                </div>
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-task>
+            <tr>
+              <td>
+                {{ task.taskId }}
+              </td>
+              <td>
+                {{ task.solutionDescription }}
+              </td>
+              <td>
+                <!-- Display the list of documents attached for the task -->
+                <ul>
+                  <li *ngFor="let document of task.documents">{{ document }}</li>
+                </ul>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="3">No solutions found.</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="loadingbody">
+            <tr>
+              <td colspan="3">Loading solutions data. Please wait.</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+ 

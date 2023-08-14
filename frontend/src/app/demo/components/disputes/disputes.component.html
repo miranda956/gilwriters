@@ -1,0 +1,77 @@
+<div class="grid">
+    <div class="col-12">
+      <div class="card">
+        <h5>Dispute Details</h5>
+  
+        <p-table [value]="disputeDetailsList" dataKey="disputeId" [rows]="10" [loading]="loading" [rowHover]="true" styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['disputeId','reason','resolution','submittedBy','submittedDate','status']" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Dispute ID
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Reason
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Resolution
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Submitted By
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Submitted Date
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Status
+                </div>
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-dispute>
+            <tr>
+              <td>
+                {{ dispute.disputeId }}
+              </td>
+              <td>
+                {{ dispute.reason }}
+              </td>
+              <td>
+                {{ dispute.resolution }}
+              </td>
+              <td>
+                {{ dispute.submittedBy }}
+              </td>
+              <td>
+                {{ dispute.submittedDate | date:'medium' }}
+              </td>
+              <td>
+                {{ dispute.status }}
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="6">No disputes found.</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="loadingbody">
+            <tr>
+              <td colspan="6">Loading dispute data. Please wait.</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+  

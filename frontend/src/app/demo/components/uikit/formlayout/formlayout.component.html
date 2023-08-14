@@ -1,0 +1,23 @@
+<div class="grid">
+	<div class="col-12">
+	  <div class="card">
+		<h5>Make Deposit</h5>
+		<div class="p-fluid p-formgrid grid">
+		  <div class="field col-12">
+			<label for="amount">Amount:</label>
+			<input pInputText id="amount" type="number" />
+		  </div>
+		  <div class="field col-12">
+			<label for="account">Account:</label>
+			<p-dropdown [options]="accountOptions" optionLabel="name" [(ngModel)]="selectedAccount"></p-dropdown>
+		  </div>
+		  <div class="field col-12">
+			<label for="description">Description:</label>
+			<input pInputTextarea id="description" rows="4"/>
+		  </div>
+		  <button pButton label="Submit"></button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  

@@ -1,0 +1,22 @@
+/* registration.component.scss */
+
+/* Add styling for the success message card */
+.success-card {
+    background-color: lightgreen;
+    border: 1px solid green;
+    color: darkgreen;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Add styling for the error message card */
+  .error-card {
+    background-color: #ffcccc;
+    border: 1px solid #ff9999;
+    color: #cc0000;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  

@@ -1,0 +1,62 @@
+<div class="grid">
+    <div class="col-12">
+      <div class="card">
+        <h5>Tasks</h5>
+        <a routerLink="/newtask" style="display: inline-block; background-color: blue; color: white; border: none; border-radius: 0.25rem; padding: 0.75rem 1rem; font-size: 1rem; text-decoration: none; cursor: pointer;">Post New Task</a>
+
+        <p-table [value]="tasksList" dataKey="taskId" [rows]="10" [loading]="loading" [rowHover]="true" styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['taskId','description','budget','timeline']" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Task ID
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Description
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Budget
+                </div>
+              </th>
+              <th>
+                <div class="flex justify-content-between align-items-center">
+                  Timeline
+                </div>
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-task>
+            <tr>
+              <td>
+                {{ task.taskId }}
+              </td>
+              <td>
+                {{ task.description }}
+              </td>
+              <td>
+                {{ task.budget | currency:'USD':'symbol' }}
+              </td>
+              <td>
+                {{ task.timeline }}
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="4">No tasks found.</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="loadingbody">
+            <tr>
+              <td colspan="4">Loading tasks data. Please wait.</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+  

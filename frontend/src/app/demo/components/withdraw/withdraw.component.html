@@ -1,0 +1,19 @@
+<div class="grid">
+	<div class="col-12">
+	  <div class="card">
+		<h5>Cash Withdrawal</h5>
+		<div class="p-fluid p-formgrid grid">
+		  <div class="field col-12">
+			<label for="withdrawalAmount">Withdrawal Amount:</label>
+			<input pInputText id="withdrawalAmount" type="number" [(ngModel)]="withdrawalAmount" />
+		  </div>
+		  <div class="field col-12">
+			<label for="debitAccount">Debit Account:</label>
+			<p-dropdown [options]="accountOptions" optionLabel="name" [(ngModel)]="selectedDebitAccount"></p-dropdown>
+		  </div>
+		  <button pButton label="Withdraw" (click)="withdraw()"></button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  

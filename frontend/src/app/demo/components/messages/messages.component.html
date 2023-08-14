@@ -1,0 +1,28 @@
+<div class="messages-container">
+    <h2>Latest Messages</h2>
+  
+    <ng-container *ngIf="loading; else messagesContent">
+      <p>Loading messages...</p>
+    </ng-container>
+  
+    <ng-template #messagesContent>
+      <div *ngIf="messages.length > 0; else noMessages">
+        <ul class="message-list">
+          <li *ngFor="let message of messages">
+            <div class="message">
+              <div class="message-header">
+                <strong>{{ message.sender }}</strong>
+                <span class="message-date">{{ message.date | date:'medium' }}</span>
+              </div>
+              <p class="message-text">{{ message.text }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+  
+      <ng-template #noMessages>
+        <p>No messages available.</p>
+      </ng-template>
+    </ng-template>
+  </div>
+  
