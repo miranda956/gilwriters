@@ -10,6 +10,7 @@ import { AuthService } from '../../service/userservice';
   templateUrl: './post-task.component.html',
   styleUrls: ['./post-task.component.scss']
 })
+
 export class PostTaskComponent implements OnInit {
   registrationData: Job = {
     description: '',
